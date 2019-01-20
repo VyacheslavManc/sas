@@ -1,0 +1,83 @@
+{% extends 'BASE_one.html' %}
+
+{% block title %}
+    Авторизация
+{% endblock %}
+
+{% block content %}
+
+
+{#<div class="maincontent">#}
+{##}
+{#      <div class="container containersize1200">#}
+{#        <div class="row">#}
+{#          <div class="col-xs-12">#}
+{#            <ul class="breadcrumb">#}
+{#                <li><a href="{% url 'index' %}">Главная /</a></li>#}
+{#                <li><span>личный кабинет</span></li>#}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+
+        <div class="row">
+
+          <div class="col-xs-12 col-md-3 col-lg-2">
+              <a href="#" id="menu-toggle">Меню</a>
+              <div id="aside">
+                 <a href="#" class="closas" id="closas">jjjj</a>
+                <div class="asides">
+
+                  <ul class="ul_asid">
+                    <li><a href="{% url 'history_order' %}">История заказов</a></li>
+                    <li><a href="#">Поддержка</a></li>
+                    <li><a href="#">Личные данные</a></li>
+                    <li><a href="#">Проверка заказов</a></li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+
+
+          <div class="col-xs-12 col-md-9 col-lg-9 col-offset-lg-1  col-offset-md-0">
+
+            <div class="wrap_account">
+              <div class="titlecontent">Личный кабинет</div>
+              <form action="{% url 'login' %}" method="post">
+
+              {% csrf_token %}
+
+                <div class="wrap_group_input account_input_block">
+                  
+
+                    <input class="input" name="username" type="text" placeholder="Логин">
+                    <input class="input" name="password" type="password" placeholder="Пароль">
+                    {% if login_error %}
+                        <label class="error">{{ login_error }}</label>
+                    {% endif %}
+                    <div class="block_btn_type3 row">
+                      <div class="wrap_order_btn col-xs-12 col-md-6">
+                        <a href="#" class="order_btn color_r">Зарегестрироваться</a>
+                      </div>
+                      <div class="wrap_order_btn col-xs-12 col-md-6">
+                        <input type="submit" class="order_btn color_r" value="Войти">
+
+                      </div>
+                    </div>
+                
+                  
+                </div>
+
+
+              </form>
+            </div>
+
+         
+      
+          </div><!--col-md-9-->
+        </div><!--row-->
+
+{#      </div>#}
+{##}
+{#    </div><!--maincontent-->#}
+
+{% endblock %}

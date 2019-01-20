@@ -1,0 +1,226 @@
+{% extends 'BASE_one.html' %}
+{% load staticfiles %}
+   {% block content %}
+
+
+    <div class="maincontent">
+
+      <div class="container containersize1200">
+
+        <div class="row">
+
+          <div class="col-xs-12">
+
+            <ul class="breadcrumb">
+                <li><a href="{% url 'index' %}">Главная /</a></li>
+                <li><a href="{% url 'catalog' %}">каталог /</a></li>
+                <li><span>карточка товара ICQ</span></li>
+            </ul>
+          </div><!--row-->
+
+          <div class="col-xs-12 col-md-8 col-lg-8">
+
+            <div class="titlecontent">Название товара</div>
+            <div class="wrap_card">
+              <div class="img_card">
+                <img src="{% static 'images/card.jpg' %}" alt="">
+              </div>
+              <div class="body_card">
+                <div class="deacr_card">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. AeneanLorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  </p>
+                </div>
+
+                <div class="block_btn_catalog">
+                  <div class="cost catalog_inl">Цена: <span class="cost_numb">100</span></div>
+                  <div class="wrap-select selectsizemid catalog_inl">
+                    <select name="" id="" class="select">
+                      <option value="">Bitcoin</option>
+                      <option value="">20</option>
+                      <option value="">30</option>
+                      <option value="">40</option>
+                    </select>
+                  </div>
+                  <a href="#" class="btn_buy_catalog catalog_inl">Купить</a>
+                </div>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+
+
+          </div><!--row-->
+
+          <div class="col-xs-12 col-md-4 col-lg-4">
+            <div class="catalog_title">Посмотрите также:</div> 
+
+            <div class="wrap_categorys clearfix">
+
+
+
+              <div class="colum">
+                <div class="item_catalog">
+                  <a href="#" class="catalog_tab">
+                    <div class="catalog_tc">
+                      8-и значные
+                    </div>
+                  </a>
+                  <div class="block_btn_catalog">
+                    <div class="cost catalog_inl">Цена: <span class="cost_numb">100</span></div>
+                    <div class="wrap-select selectsizemid catalog_inl">
+                      <select name="" id="" class="select">
+                        <option value="">Bitcoin</option>
+                        <option value="">20</option>
+                        <option value="">30</option>
+                        <option value="">40</option>
+                      </select>
+                    </div>
+                    <a href="#" class="btn_buy_catalog catalog_inl">Купить</a>
+                  </div>
+                </div><!--item_categorys-->
+              </div><!--colum-->
+
+              <div class="colum">
+                <div class="item_catalog">
+                  <a href="#" class="catalog_tab">
+                    <div class="catalog_tc">
+                      7-и значные
+                    </div>
+                  </a>
+                  <div class="block_btn_catalog">
+                    <div class="cost catalog_inl">Цена: <span class="cost_numb">100</span></div>
+                    <div class="wrap-select selectsizemid catalog_inl">
+                      <select name="" id="" class="select">
+                        <option value="">Bitcoin</option>
+                        <option value="">20</option>
+                        <option value="">30</option>
+                        <option value="">40</option>
+                      </select>
+                    </div>
+                    <a href="#" class="btn_buy_catalog catalog_inl">Купить</a>
+                  </div>
+                </div><!--item_categorys-->
+              </div><!--colum-->
+
+              <div class="colum">
+                <div class="item_catalog">
+                  <a href="#" class="catalog_tab">
+                    <div class="catalog_tc">
+                      8-и значные
+                    </div>
+                  </a>
+                  <div class="block_btn_catalog">
+                    <div class="cost catalog_inl">Цена: <span class="cost_numb">100</span></div>
+                    <div class="wrap-select selectsizemid catalog_inl">
+                      <select name="" id="" class="select">
+                        <option value="">Bitcoin</option>
+                        <option value="">20</option>
+                        <option value="">30</option>
+                        <option value="">40</option>
+                      </select>
+                    </div>
+                    <a href="#" class="btn_buy_catalog catalog_inl">Купить</a>
+                  </div>
+                </div><!--item_categorys-->
+              </div><!--colum-->
+              <div class="colum">
+                <div class="item_catalog">
+                  <a href="#" class="catalog_tab">
+                    <div class="catalog_tc">
+                      6-и значные
+                    </div>
+                  </a>
+                  <div class="block_btn_catalog">
+                    <div class="cost catalog_inl">Цена: <span class="cost_numb">100</span></div>
+                    <div class="wrap-select selectsizemid catalog_inl">
+                      <select name="" id="" class="select">
+                        <option value="">Bitcoin</option>
+                        <option value="">20</option>
+                        <option value="">30</option>
+                        <option value="">40</option>
+                      </select>
+                    </div>
+                    <a href="#" class="btn_buy_catalog catalog_inl">Купить</a>
+                  </div>
+                </div><!--item_categorys-->
+              </div><!--colum-->
+              <div class="colum">
+                <div class="item_catalog">
+                  <a href="#" class="catalog_tab">
+                    <div class="catalog_tc">
+                      5-и значные
+                    </div>
+                  </a>
+                  <div class="block_btn_catalog">
+                    <div class="cost catalog_inl">Цена: <span class="cost_numb">100</span></div>
+                    <div class="wrap-select selectsizemid catalog_inl">
+                      <select name="" id="" class="select">
+                        <option value="">Bitcoin</option>
+                        <option value="">20</option>
+                        <option value="">30</option>
+                        <option value="">40</option>
+                      </select>
+                    </div>
+                    <a href="#" class="btn_buy_catalog catalog_inl">Купить</a>
+                  </div>
+                </div><!--item_categorys-->
+              </div><!--colum-->
+              <div class="colum">
+                <div class="item_catalog">
+                  <a href="#" class="catalog_tab">
+                    <div class="catalog_tc">
+                      7-и значные
+                    </div>
+                  </a>
+                  <div class="block_btn_catalog">
+                    <div class="cost catalog_inl">Цена: <span class="cost_numb">100</span></div>
+                    <div class="wrap-select selectsizemid catalog_inl">
+                      <select name="" id="" class="select">
+                        <option value="">Bitcoin</option>
+                        <option value="">20</option>
+                        <option value="">30</option>
+                        <option value="">40</option>
+                      </select>
+                    </div>
+                    <a href="#" class="btn_buy_catalog catalog_inl">Купить</a>
+                  </div>
+                </div><!--item_categorys-->
+              </div><!--colum-->
+              <div class="colum">
+                <div class="item_catalog">
+                  <a href="#" class="catalog_tab">
+                    <div class="catalog_tc">
+                      6-и значные
+                    </div>
+                  </a>
+                  <div class="block_btn_catalog">
+                    <div class="cost catalog_inl">Цена: <span class="cost_numb">100</span></div>
+                    <div class="wrap-select selectsizemid catalog_inl">
+                      <select name="" id="" class="select">
+                        <option value="">Bitcoin</option>
+                        <option value="">20</option>
+                        <option value="">30</option>
+                        <option value="">40</option>
+                      </select>
+                    </div>
+                    <a href="#" class="btn_buy_catalog catalog_inl">Купить</a>
+                  </div>
+                </div><!--item_categorys-->
+              </div><!--colum-->
+
+          
+
+            </div><!--wrap_categorys-->
+
+
+          </div>
+        </div><!--row-->
+
+      </div>
+
+    </div><!--maincontent-->
+{% endblock %}

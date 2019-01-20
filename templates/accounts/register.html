@@ -1,0 +1,61 @@
+{% extends "BASE_one.html" %}
+{% block title %}
+    Регистрация
+{% endblock %}
+{% block content %}
+<div class="container containersize1200">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'index' %}">Главная /</a></li>
+                <li><span>личный кабинет</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-md-3 col-lg-2">
+            <a href="#" id="menu-toggle">Меню</a>
+            <div id="aside">
+                <a href="#" class="closas" id="closas">jjjj</a>
+                <div class="asides">
+                    <ul class="ul_asid">
+                        <li><a href="https://demo.redlion.kz/cabinet/orderHistory">История заказов</a></li>
+                        <li><a href="https://demo.redlion.kz/support">Поддержка</a></li>
+                        <li><a href="https://demo.redlion.kz/cabinet/personalData">Личные данные</a></li>
+                        <li><a href="https://demo.redlion.kz/orders/checkOrder">Проверка заказов</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-md-9 col-lg-9 col-offset-lg-1  col-offset-md-0">
+            <div class="wrap_account">
+                <div class="titlecontent">Регистрация</div>
+                <form action="{% url 'register' %}" method="POST">
+                    {% csrf_token %}
+                    <input name="_token" value="IJFhzTC1urWdGJuMbNVoos2NMAAllv6ucw4dl6g4" type="hidden">
+
+                    <div class="wrap_group_input account_input_block">
+
+                        {% for foo in form %}
+                            {{ foo }}
+                        {% endfor %}
+
+                        <div class="block_btn_type3 row">
+                            <div class="wrap_order_btn col-xs-12 col-md-6">
+                                <input class="order_btn color_r" value="Зарегистрироваться" type="submit">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><!--col-md-9-->
+
+    </div><!--row-->
+</div>
+
+{% endblock %}
+

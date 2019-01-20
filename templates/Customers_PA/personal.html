@@ -1,0 +1,71 @@
+{% extends 'personal_offis.html' %}
+
+{% block title %}
+    Личные данные
+{% endblock %}
+
+{% block content %}
+
+        <div class="row">
+
+
+
+
+          <div class="col-xs-12 col-md-9 col-lg-9 col-offset-lg-10">
+
+         
+              <div class="titlecontent">Личные данные</div>
+    
+
+
+              <div class="wrap_block_form">
+
+                <form action="{% url 'register' %}">
+                    {% csrf_token %}
+                    <div class="wrap_group">
+                      <div class="form_label">Имя:</div> 
+                      <div class="wr_input_cont"> 
+                        <input type="text" class="input_content" placeholder="Татьяна">
+                      </div>
+                    </div>
+                    <div class="wrap_group">
+                      <div class="form_label">E-mail:</div>  
+                      <div class="wr_input_cont">
+                        <input type="text" class="input_content" placeholder="email@mail.ru">
+                      </div>
+                    </div>
+          
+                    <div class="wrap_group">
+                      <div class="form_label">Пароль:</div> 
+                      <div class="wr_input_cont"> 
+                        <input type="password" class="input_content" placeholder="Пароль">
+                      </div>
+                    </div>
+                    <div class="wrap_group">
+                      <div class="form_label">Повтор пароля:</div>  
+                      <div class="wr_input_cont">
+                        <input type="password" class="input_content" placeholder="Пароль">
+                      </div>
+                    </div>
+                    <input type="submit" class="send" value="Сохранить">
+
+                  </form>
+    
+               </div>
+
+         
+
+          </div><!--col-md-9-->
+        </div><!--row-->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <title>{% block title %}{% endblock %}</title>
+
+    {% load static %}
+
+    <link rel="shortcut icon" href="{% static "favicon.ico" %}" type="image/x-icon">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href={% static "css/bootstrap-grid.min.css" %}>
+
+    <link rel="stylesheet" href="{% static "slick/slick.css" %}" type="text/css" media="screen"/>
+
+    <link rel="stylesheet" href="{% static "slick/slick-theme.css" %}" type="text/css" media="screen"/>
+
+    <script type="text/javascript" src="{% static "slick/slick.min.js" %}"></script>
+
+    <link rel="stylesheet" href="{% static "js/formstyler/jquery.formstyler.css" %}" type="text/css" media="screen"/>
+
+    <script type="text/javascript" src="{% static "js/formstyler/jquery.formstyler.min.js" %}"></script>
+
+    <script type="text/javascript" src="{% static "js/raty/jquery.raty.min.js" %}"></script>
+
+    <script type="text/javascript" src="{% static "js/jscharts.js" %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/stylem.css" %}">
+
+    <script type="text/javascript" src="{% static "js/init.js" %}"></script>
+
+    <!--[if IE 9]> <link rel="stylesheet" type="text/css" href="css/ie9.css">
+
+      <script type="text/javascript" src="js/placeholder.js"></script> <![endif]-->
+</head>
+
+<body data-media-url="{% get_media_prefix %}">
+
+<div id="wrapper">
+    <div class="wrapper">
+        <header class="header header_m">
+            <div class="container containersize1200">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="logo_top">
+                            <img src="{% static "images/logo.png" %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        {% if user.is_authenticated %}
+                            <div class="usr_logout">
+                            <div class="title_user_log"><a href="{% url 'personal' %}">Личный кабинет</a></div>
+                            <a class="send_button" href="{% url 'logout' %}">Выйти {{ username }}</a>
+                        {% else %}
+                            <div class="usr_login">
+                            <div class="title_user_log">Личный кабинет</div>
+                            <a class="send_button" href="{% url 'login' %}">Войти</a>
+                            <a class="send_button" href="{% url 'register' %}">Регистрация</a>
+                        {% endif %}
+                        </div>
+                        {#                        <div class="autoris_login">#}
+                        {##}
+                        {#                            <a class="send_button" href="">Регистрация</a>#}
+                        {#                        </div>#}
+                        {#                        <div class="autoris_login">#}
+                        {##}
+                        {#                            <div class="name_user_aut">Здравствуйте, Name</div>#}
+                        {#                            <a href="#" class="btn_user">Выйти</a>#}
+                        {#                        </div>#}
+                        </div>
+
+                        <div class="col-xs-12">
+                            <div class="menu_center_group">
+                                <div class="main_menu">
+                                    <ul>
+                                        <li><a href="{% url 'catalog' %}">Каталог</a></li>
+                                        <li><a href="{% url 'checkOrder' %}">Проверка заказов</a></li>
+                                        <li><a href="{% url 'how_to_buy' %}">Как купить</a></li>
+                                        <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+                                        <li><a href="{% url 'news' %}">Новости</a></li>
+                                        <li><a href="{% url 'support' %}">Поддержка</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="maincontent">
+
+            <div class="container containersize1200">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="breadcrumb">
+                            <li><a href="{% url 'index' %}">Главная /</a></li>
+                            <li><a href="{% url 'personal' %}">Личный кабинет пользователя /</a></li>
+                            <li><span>Личные данные</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-3 col-lg-2">
+                        <a href="#" id="menu-toggle">Меню</a>
+                        <div id="aside">
+                            <a href="#" class="closas" id="closas">jjjj</a>
+                            <div class="asides">
+
+                                <ul class="ul_asid">
+                                    <li><a href="{% url 'history_order' %}">История заказов</a></li>
+                                    <li><a href="{% url 'personal_support' %}">Поддержка</a></li>
+                                    <li><a href="{% url 'personal' %}">Личные данные</a></li>
+                                    <li><a href="{% url 'order_review' %}">Проверка заказов</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% block content %}{% endblock %}
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+
+            <div class="container containersize1200">
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-md-4 col-lg-6">
+
+                        <a href="#" class="logo_foot"><img src="{% static "images/logo_foot.png" %}" alt=""></a>
+
+                        <div class="copy">(c) Название 2017</div>
+
+                    </div><!--col-xs-12-->
+
+                    <div class="col-xs-12 col-md-8 col-lg-6">
+
+                        <div class="footmenu_wr">
+
+                            <ul class="foot_menu">
+
+                                <li><a href="#">Vkontakte</a></li>
+
+                                <li><a href="#">Skype</a></li>
+
+                                <li><a href="#">Whatsapp</a></li>
+
+                                <li><a href="#">Viber</a></li>
+
+                                <li><a href="#">Мой Мир @Mail.ru</a></li>
+
+                                <li><a href="#">Telegram</a></li>
+
+                                <li><a href="#">Одноклассники</a></li>
+
+                                <li><a href="#">ICQ</a></li>
+
+                                <li><a href="#">Jabber</a></li>
+
+                            </ul>
+
+                        </div>
+
+                    </div><!--col-xs-12-->
+
+                </div>
+
+            </div>
+
+        </div><!--footer-->
+
+    </div><!--wrapper-->
+
+</div>
+
+</body>
+
+
+</html>

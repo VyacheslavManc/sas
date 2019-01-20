@@ -1,0 +1,71 @@
+{% extends "BASE_one.html" %}
+{% load staticfiles %}
+
+{% block title %}
+    Каталог
+{% endblock %}
+
+{% block content %}
+
+    <div class="maincontent">
+
+      <div class="container containersize1200">
+
+        <div class="row">
+
+          <div class="col-xs-12">
+
+            <ul class="breadcrumb">
+                <li><a href="{% url 'index' %}">Главная /</a></li>
+                <li><span>каталог</span></li>
+            </ul>
+
+          </div><!--col-xs-12-->
+
+            <div class="hcontent">Категории</div>
+
+          </div><!--row-->
+
+        </div>
+
+
+        <div class="row wrap_categorys">
+            {% for category in category_list %}
+          <div class="col-xs-6 col-md-4 col-lg-3">
+            <a href="{% url 'category' category.alias_url %}" class="item_categorys">
+              <div class="item_categorys"><img src="{{ category.Image.global_image.url }}" alt="#"></div>
+              <div class="body_categorys">
+                <div class="icon_categys_tab">
+                  <div class="icon_categys_tc">
+
+                    <img src="{{ category.img.icon.url }}" alt="#">
+                  </div>
+                </div>
+                <div class="name_categys">{{ category.Name }}</div>
+              </div>
+            </a><!--item_categorys-->
+          </div><!--col-xs-6-->
+            {% endfor %}
+
+
+
+
+
+            {% for article in articleList %}
+
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content_title">{{ article.title|safe }}</div>
+            <div class="text_block">
+             {{ article.text|safe }}
+            </div>
+
+          </div>
+        </div><!--row-->
+         {% endfor %}
+      </div>
+      </div>
+    </div><!--maincontent-->
+
+{% endblock %}

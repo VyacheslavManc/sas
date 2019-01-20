@@ -1,0 +1,10 @@
+
+<form id="form" method="post">
+    {% csrf_token %}
+    {% for foo in form %}
+        {{ foo }}
+    {% endfor %}
+
+    <input type="submit" class="send_button" value="Войти">
+    <a class="send_button" href="{% url 'register' %}">Регистрация</a>
+</form>
